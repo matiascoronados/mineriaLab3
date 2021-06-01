@@ -35,7 +35,11 @@ print(result)
 #Aplicando sobre texto
 
 
-dataq <- read.csv("/Users/matiascoronado/Downloads/NYTimes.csv.gz")
+data <- as.data.frame(read.csv("/Users/matiascoronado/Downloads/NYTimes.csv.gz"))
+
+
+
+data$
 
 corpus <- Corpus(VectorSource(data$Title[1:150]))
 print(corpus)
@@ -71,8 +75,9 @@ print(f)
 
 model <- maxent(sparse[1:100,],data$Topic.Code[1:100],l1_regularizer = 0.2, l2_regularizer = 0.0, use_sgd = FALSE, set_heldout = 0, verbose = FALSE)
 
-
 results <- predict(model,sparse[101:120,])
+
+
 
 #Probabilidad de que alguno de estos casos pertenezcan a una de las categorias (columnas?)
 
