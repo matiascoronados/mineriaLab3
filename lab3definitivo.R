@@ -9,6 +9,27 @@ data$Rating <- round(data$Rating*10)
 dataA <- data
 dataA$Author <- factor(dataA$Author)
 
+print("Ranking 1")
+sum(data[1:3500,]$Rating=='1')
+print("Ranking 2")
+sum(data[1:3500,]$Rating=='2')
+print("Ranking 3")
+sum(data[1:3500,]$Rating=='3')
+print("Ranking 4")
+sum(data[1:3500,]$Rating=='4')
+print("Ranking 5")
+sum(data[1:3500,]$Rating=='5')
+print("Ranking 6")
+sum(data[1:3500,]$Rating=='6')
+print("Ranking 7")
+sum(data[1:3500,]$Rating=='7')
+print("Ranking 8")
+sum(data[1:3500,]$Rating=='8')
+print("Ranking 9")
+sum(data[1:3500,]$Rating=='9')
+print("Ranking 10")
+sum(data[1:3500,]$Rating=='10')
+
 #Conjunto de textos relacionados a cada categoria.
 corpus <- Corpus(VectorSource(data$Text))
 print(corpus)
@@ -39,6 +60,10 @@ sparse <- as.compressed.matrix(matrix)
 
 # Relacion de datos 1/3.
 f <- tune.maxent(sparse[1:3500,],data$Rating[1:3500],nfold = 3, showall = TRUE, verbose = TRUE)
+
+
+sum(data[1:3500]$Rating=='10')
+
 
 print(f)
 
